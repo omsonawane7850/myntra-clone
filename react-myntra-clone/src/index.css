@@ -42,10 +42,11 @@ header {
   text-transform: uppercase;
   text-decoration: none;
   padding: 28px 0;
-  border-bottom: 5px solid #ffffff;
+  border-bottom: 4px solid transparent;
 }
+
 .nav_bar a:hover {
-  border-bottom: 4px solid #f54e77;
+  border-bottom-color: #f54e77;
 }
 
 .nav_bar a sup {
