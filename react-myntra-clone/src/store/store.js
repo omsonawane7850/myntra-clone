@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import itemsSlice from "../features/ItemSlice";
+import itemsSliceReducer from "../features/itemsSlice";
+import fetchStatusReducer from "../features/fetchStatusSlice";
 
 export const myntraStore = configureStore({
   reducer: {
-    items: itemsSlice,
+    items: itemsSliceReducer,
+    fetchStatus: fetchStatusReducer,
   },
 });
 
