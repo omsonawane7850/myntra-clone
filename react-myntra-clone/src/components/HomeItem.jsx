@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addToBag } from "../features/bagSlice";
+import { addToBag, removeFromBag } from "../features/bagSlice";
 import { IoBagAdd } from "react-icons/io5";
 import { RiDeleteBin2Fill } from "react-icons/ri";
 
@@ -11,6 +11,9 @@ const HomeItem = ({ item }) => {
 
   const handleAddToBag = () => {
     dispatch(addToBag(item.id));
+  };
+  const handleRemove = () => {
+    dispatch(removeFromBag(item.id));
   };
 
   return (
@@ -28,7 +31,11 @@ const HomeItem = ({ item }) => {
       </div>
 
       {elementFound ? (
-        <button type="button" class="btn btn-danger btn-add-bag">
+        <button
+          type="button"
+          class="btn btn-danger btn-add-bag"
+          onClick={handleRemove}
+        >
           <RiDeleteBin2Fill />
           Remove
         </button>
