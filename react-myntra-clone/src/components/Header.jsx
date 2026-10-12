@@ -2,8 +2,10 @@ import { IoPerson } from "react-icons/io5";
 import { FcLike } from "react-icons/fc";
 import { RiShoppingBag3Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const bag = useSelector((state) => state.bag);
   return (
     <header>
       <div className="logo_container">
@@ -46,7 +48,7 @@ const Header = () => {
         <Link className="action_container" to="/bag">
           <RiShoppingBag3Fill />
           <span className="action_name">Bag</span>
-          <span className="bag-item-count">0</span>
+          <span className="bag-item-count">{bag.length}</span>
         </Link>
       </div>
     </header>

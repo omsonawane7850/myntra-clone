@@ -11,7 +11,9 @@
     Arial,
     sans-serif;
   box-sizing: border-box;
+  
 }
+
 header {
   display: flex;
   background-color: #ffffff;
@@ -387,4 +389,8 @@ a.action_container:link {
 }
 .spinner {
   margin: 100px 0;
+}
+.action_container {
+  text-decoration: none;
+  color: black;
 }
