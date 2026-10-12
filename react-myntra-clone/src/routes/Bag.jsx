@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import BagItem from "../components/BagItem";
-import BagSummery from "../components/BagSummery";
+import BagSummery from "../components/BagSummary";
 
 const Bag = () => {
   const bagItems = useSelector((state) => state.bag);
