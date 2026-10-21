@@ -18,7 +18,8 @@ const FetchItems = () => {
 
     dispatch(markFetchingStarted());
 
-    fetch("http://localhost:8080/items", { signal })
+    const url = `${import.meta.env.VITE_API_URL}/items`;
+    fetch(url, { signal })
       .then((res) => res.json())
       .then(({ items }) => {
         dispatch(markFetchDone());
