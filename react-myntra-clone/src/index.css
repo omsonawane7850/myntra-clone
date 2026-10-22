@@ -677,6 +677,25 @@ a.action_container:link {
     white-space: nowrap;
   }
 
+  /* header icons (profile / wishlist / bag) */
+  .action_container > :first-child,
+  .action_container .material-symbols-outlined,
+  .action_container i,
+  .action_container svg {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .action_container svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .action_container img {
+    width: 20px;
+    height: 20px;
+  }
+
   .search_bar {
     order: 3;
     flex: 0 0 100%;
@@ -696,7 +715,7 @@ a.action_container:link {
   .nav_bar a {
     flex-shrink: 0;
     padding: 8px 0;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   /* Home page */
@@ -726,12 +745,29 @@ a.action_container:link {
     margin: 0 0 20px;
   }
 
+  .rating {
+    font-size: 12px;
+  }
+
   .company-name {
     font-size: 14px;
   }
 
   .item-name {
-    font-size: 12px;
+    font-size: 13px;
+  }
+
+  .price {
+    font-size: 13px;
+  }
+
+  .current-price {
+    font-size: 13px;
+  }
+
+  .original-price,
+  .discount {
+    font-size: 11px;
   }
 
   /* Footer */
@@ -805,12 +841,12 @@ a.action_container:link {
   }
 
   .nav_bar a {
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 0;
   }
 
   .nav_bar a sup {
-    font-size: 8px;
+    font-size: 9px;
   }
 
   .search_input {
@@ -872,38 +908,39 @@ a.action_container:link {
   }
 
   .rating {
-    font-size: 10px;
+    margin-top: 5px;
+    font-size: 12px;
   }
 
   .company-name {
     margin-top: 8px;
     margin-bottom: 5px;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .item-name {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .price {
     margin-top: 8px;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .current-price {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .original-price,
   .discount {
     margin-left: 3px;
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .btn.btn-add-bag {
     gap: 5px;
     padding: 8px 5px;
-    font-size: 14px;
+    font-size: 15px;
     border-radius: 6px;
   }
 
@@ -935,7 +972,7 @@ a.action_container:link {
   /* Shopping bag */
   .bag-items-container {
     padding: 16px 0;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .bag-summary {
@@ -947,13 +984,13 @@ a.action_container:link {
   }
 
   .item-left-part {
-    width: 85px;
-    height: 115px;
+    width: 88px;
+    height: 120px;
   }
 
   .item-right-part {
-    min-height: 115px;
-    margin-left: 85px;
+    min-height: 120px;
+    margin-left: 88px;
     padding-left: 8px;
     padding-right: 15px;
   }
@@ -965,36 +1002,37 @@ a.action_container:link {
 
   .return-period {
     flex-wrap: wrap;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .delivery-details {
-    font-size: 10px;
-    line-height: 14px;
+    font-size: 11px;
+    line-height: 15px;
   }
 
   .remove-from-cart {
     top: 4px;
     right: 4px;
-    width: 22px;
-    height: 22px;
-    font-size: 18px;
+    width: 24px;
+    height: 24px;
+    font-size: 20px;
   }
 
   .price-header {
     margin: 18px 0 12px;
-  }
-
-  .price-item {
     font-size: 12px;
   }
 
-  .price-footer {
+  .price-item {
     font-size: 13px;
   }
 
+  .price-footer {
+    font-size: 14px;
+  }
+
   .btn-place-order {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
@@ -1020,7 +1058,7 @@ a.action_container:link {
   }
 
   .nav_bar a {
-    font-size: 9px;
+    font-size: 11px;
   }
 
   .action_bar {
@@ -1032,21 +1070,25 @@ a.action_container:link {
   }
 
   .company-name {
-    font-size: 12px;
+    font-size: 13px;
+  }
+
+  .item-name {
+    font-size: 11px;
   }
 
   .original-price,
   .discount {
-    font-size: 9px;
+    font-size: 10px;
   }
 
   .item-left-part {
-    width: 75px;
-    height: 105px;
+    width: 80px;
+    height: 115px;
   }
 
   .item-right-part {
-    min-height: 105px;
-    margin-left: 75px;
+    min-height: 115px;
+    margin-left: 80px;
   }
 }
