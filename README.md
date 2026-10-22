@@ -1,66 +1,84 @@
 # Myntra Clone
 
-A Myntra-inspired shopping application built using React.js and Vite. It includes product listings, shopping bag management, and automatic price calculation using Redux Toolkit.
+A Myntra-inspired shopping application built using React.js and Vite. The application fetches product data from a backend API and provides shopping bag management with dynamic price calculations using Redux Toolkit.
 
 ## Features
 
-- Displays products fetched from a backend API
-- Shows product details, prices, ratings, and discounts
-- Add products to the shopping bag
-- Remove products from the shopping bag
-- Displays the total number of bag items
-- Calculates total MRP, discount, convenience fee, and final payment
-- Displays a loading spinner while fetching products
-- Navigation between Home and Bag pages
-- Responsive user interface
+* Fetches product data from a backend API
+* Displays product images, company names, prices, ratings, and discounts
+* Add products to the shopping bag
+* Remove products from the shopping bag
+* Displays the total number of bag items
+* Calculates total MRP, discount, convenience fee, and final payment
+* Displays a loading spinner while fetching products
+* Navigation between Home and Bag pages
+* Responsive design for desktop, laptop, tablet, and mobile devices
+* Environment variable support for backend API configuration
 
-## Technologies
+## Technologies Used
 
-- React.js
-- Vite
-- Redux Toolkit
-- React Redux
-- React Router
-- Bootstrap
-- React Icons
-- Node.js
-- Express.js
+* React.js
+* Vite
+* JavaScript
+* Redux Toolkit
+* React Redux
+* React Router
+* Bootstrap
+* React Icons
+* Node.js
+* Express.js
 
-## Installation
+## Project Structure
+
+```text
+myntra-clone/
+├── react-myntra-clone/    # Frontend application
+│   ├── public/
+│   ├── src/
+│   ├── package.json
+│   └── index.html
+│
+└── myntra backend/        # Backend application
+    ├── data/
+    ├── app.js
+    └── package.json
+```
+
+## Installation and Setup
 
 ### 1. Clone the Repository
-
-Clone the project from GitHub:
 
 ```bash
 git clone <repository-url>
 ```
 
-### 2. Set Up the Frontend
+Navigate to the project directory.
 
-Navigate to the React project directory:
+### 2. Set Up the Frontend
 
 ```bash
 cd react-myntra-clone
+npm install
 ```
 
-Install the dependencies:
+Create a `.env` file in the frontend root directory and configure the backend API URL:
+
+```env
+VITE_API_URL=http://localhost:8080
+```
+
+Start the frontend development server:
 
 ```bash
-npm install
+npm run dev
 ```
 
 ### 3. Set Up the Backend
 
-Open a new terminal and navigate to the backend directory:
+Open a separate terminal and navigate to the backend directory:
 
 ```bash
 cd "myntra backend"
-```
-
-Install the backend dependencies:
-
-```bash
 npm install
 ```
 
@@ -70,67 +88,87 @@ Start the backend server:
 node app.js
 ```
 
-**Note:** Replace `app.js` with your actual backend entry filename if it is different.
+Replace `app.js` with the actual backend entry filename if it is different.
 
-The backend server runs at:
+The backend runs at:
 
-`http://localhost:8080`
-
-### 4. Start the Frontend
-
-In the frontend terminal, run:
-
-```bash
-npm run dev
+```text
+http://localhost:8080
 ```
 
-Open the local URL displayed in the terminal to access the application.
+**Important:** Keep both the frontend and backend servers running during local development.
 
-**Important:** Keep both the frontend and backend servers running simultaneously for the application to work correctly.
+## Deployment
+
+The application uses separate deployments for the frontend and backend.
+
+* **Frontend:** Deployed on Vercel
+* **Backend:** Deployed on Render
+
+The frontend communicates with the backend through its API endpoint.
+
+Configure `VITE_API_URL` in the frontend deployment environment variables to point to the deployed backend URL.
+
+For local development, use the localhost URL. For production, use the deployed backend URL.
+
+After changing frontend environment variables, trigger a new frontend deployment for the changes to take effect.
 
 ## Backend API Endpoints
 
-The application uses a Node.js and Express.js backend to provide product data.
+| Method | Endpoint     | Description             |
+| ------ | ------------ | ----------------------- |
+| GET    | `/items`     | Fetches all products    |
+| GET    | `/items/:id` | Fetches a product by ID |
+| POST   | `/items`     | Adds a new product      |
 
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/items` | Fetches all products |
-| GET | `/items/:id` | Fetches a product by ID |
-| POST | `/items` | Adds a new product |
+To test the local backend, open:
 
-To verify that the backend is running, open the following endpoint in your browser:
+```text
+http://localhost:8080/items
+```
 
-`http://localhost:8080/items`
-
-It should return the product data in JSON format.
+The endpoint should return product data in JSON format.
 
 ## State Management
 
 Redux Toolkit manages the application's global state.
 
-- **Items Slice:** Stores the fetched product data.
-- **Bag Slice:** Manages adding and removing products from the shopping bag.
-- **Fetch Status Slice:** Tracks the fetching status and loading state.
+* **Items Slice:** Stores product data fetched from the backend.
+* **Bag Slice:** Manages adding and removing products from the shopping bag.
+* **Fetch Status Slice:** Tracks the product-fetching status and loading state.
+
+React Redux connects the Redux store to React components.
 
 ## Shopping Bag
 
-The shopping bag allows users to add and remove products and view their price details.
+The shopping bag provides an overview of selected products and their prices.
 
 It includes:
 
-- Total number of items
-- Total MRP
-- Discount on MRP
-- Convenience fee
-- Final payment amount
+* Total number of bag items
+* Total MRP
+* Discount on MRP
+* Convenience fee
+* Final payment amount
 
 ### Price Calculation
 
 The final payment amount is calculated using the following formula:
 
-`Final Payment = Total MRP - Total Discount + Convenience Fee`
+```text
+Final Payment = Total MRP - Total Discount + Convenience Fee
+```
 
 The convenience fee is ₹99.
+
+## Responsive Design
+
+The user interface adapts to different screen sizes, including:
+
+* Large desktop screens
+* Laptops
+* Tablets
+* Mobile phones
 
 ## Author
 
