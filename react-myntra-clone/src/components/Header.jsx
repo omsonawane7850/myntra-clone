@@ -3,6 +3,7 @@ import { FcLike } from "react-icons/fc";
 import { RiShoppingBag3Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { GrSearch } from "react-icons/gr";
 
 const Header = () => {
   const bag = useSelector((state) => state.bag);
@@ -28,7 +29,9 @@ const Header = () => {
         </a>
       </nav>
       <div className="search_bar">
-        <span className="material-symbols-outlined search_icon">search</span>
+        <span className="search_icon">
+          <GrSearch />
+        </span>
         <input
           className="search_input"
           placeholder="Search for products, brands and more"
